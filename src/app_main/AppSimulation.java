@@ -26,4 +26,17 @@ public class AppSimulation extends JFrame {
         SwingUtilities.invokeLater(AppSimulation::new);
         GameMap gm = new GameMap();
     }
+
+    public void nextTurn(){
+
+    }
+
+    public void startSimulation(){
+
+    }
+
+    public void pauseSimulation(){
+
+    }
+
 }
