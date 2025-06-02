@@ -6,8 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ButtonPanel extends JPanel {
+    private Timer timer;
 
-    public ButtonPanel() {
+    public ButtonPanel(Timer timer) {
+        this.timer = timer;
         setBackground(Color.BLUE);
         JButton startButton = new JButton("Старт");
         JButton pauseButton = new JButton("Приостановить");
@@ -18,12 +20,14 @@ public class ButtonPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Старт");
-           }
+                timer.start();
+            }
         });
 
         pauseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                timer.stop();
                 System.out.println("Пауза");
             }
         });
@@ -31,7 +35,7 @@ public class ButtonPanel extends JPanel {
         finishButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               System.exit(1);
+                System.exit(1);
             }
         });
 
