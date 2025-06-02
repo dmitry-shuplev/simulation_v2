@@ -34,6 +34,7 @@ public class Coordinate {
                 this.posY >= 0 && this.posY <= app_main.Settings.GAME_FIELD_Y_MAX;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
