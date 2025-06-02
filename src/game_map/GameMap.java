@@ -7,16 +7,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GameMap {
-    Map<Coordinate, Entity> game_map = new HashMap<>();
-    public GameMap(){
-        this.init();
+    Map<Coordinate, Entity> game_map;
+
+    public GameMap() {
+        game_map = new HashMap<>();
     }
 
-    private void init(){
-        System.out.println(Settings.startMap);
+
+    public void setEntyti(Entity entity) {
+        game_map.put(entity.getCoordinate(), entity);
     }
 
-    public boolean isCoordinateFree(Coordinate c){
+
+    public boolean isCoordinateFree(Coordinate c) {
         return !game_map.containsKey(c);
     }
 
