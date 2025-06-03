@@ -14,11 +14,11 @@ public class GameMap {
     }
 
 
-    public void setEntyti(Entity entity) {
+    public void setEntity(Entity entity) {
         game_map.put(entity.getCoordinate(), entity);
     }
 
-    
+
 
     public boolean isCoordinateFree(Coordinate c) {
         return !game_map.containsKey(c);

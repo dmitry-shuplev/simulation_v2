@@ -1,8 +1,5 @@
 package app_main;
 
-import game_map.Coordinate;
-
-import java.util.HashMap;
 import java.util.Map;
 
 public class Settings {
@@ -12,12 +9,12 @@ public class Settings {
     public static final int HERBIVORE_HEALTH = 1;
     public static final int PREDATOR_HEALTH = 1;
 
-    public static Map<String, Integer> startMap = Map.of(
+    public final static Map<String, Integer> START_MAP = Map.of(
             "Herbvore", 5,
             "Predator", 2,
             "Grass", 6,
             "Tree", 10,
-            "Stone", 20
+            "Rock", 20
     );
 
 }

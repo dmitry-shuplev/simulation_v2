@@ -1,5 +1,6 @@
 package app_main;
 
+import actions.GameActionInit;
 import game_map.GameMap;
 import view.ButtonPanel;
 import view.MapPanel;
@@ -13,12 +14,19 @@ import static java.lang.Thread.sleep;
 
 public class AppSimulation extends JFrame {
     private int stepCounter = 0;
+    private GameMap gameMap;
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(AppSimulation::new);
+    }
 
     public AppSimulation() {
+        this.gameMap = new GameMap();
         setSize(1200, 600);
         setTitle("Проект Симуляция road_map Сергея Жукова версия 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MapPanel mapPanel = new MapPanel();
+        JPanel southPanel = new JPanel(new FlowLayout());
         JLabel infoLabel = new JLabel("Шаг : 0, Инициация.");
 
         Timer timer = new Timer(1000, new ActionListener() {
@@ -28,19 +36,17 @@ public class AppSimulation extends JFrame {
             }
         });
         ButtonPanel buttonPanel = new ButtonPanel(timer);
+        southPanel.add(infoLabel);
+        southPanel.add(buttonPanel);
 
         setLayout(new BorderLayout());
-        add(mapPanel, BorderLayout.NORTH);
-        add(infoLabel, BorderLayout.NORTH);
-        add(buttonPanel, BorderLayout.SOUTH);
+        add(mapPanel, BorderLayout.CENTER);
+        add(southPanel, BorderLayout.SOUTH);
         setLocation(200, 200);
         setVisible(true);
+        this.startSimulation();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(AppSimulation::new);
-        GameMap gameMap = new GameMap();
-    }
 
     public void nextTurn(JLabel labelInfo) {
         stepCounter++;
@@ -48,7 +54,8 @@ public class AppSimulation extends JFrame {
     }
 
     public void startSimulation() {
-// здесь действия по инициализации карты
+         new GameActionInit(gameMap);
+        System.out.println(gameMap.toString());
     }
 
     public void pauseSimulation() {
