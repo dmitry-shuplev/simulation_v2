@@ -39,7 +39,7 @@ public class AppSimulation extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AppSimulation::new);
-        GameMap gm = new GameMap();
+        GameMap gameMap = new GameMap();
     }
 
     public void nextTurn(JLabel labelInfo) {

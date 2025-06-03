@@ -18,6 +18,7 @@ public class GameMap {
         game_map.put(entity.getCoordinate(), entity);
     }
 
+    
 
     public boolean isCoordinateFree(Coordinate c) {
         return !game_map.containsKey(c);
