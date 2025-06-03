@@ -10,7 +10,7 @@ public class ButtonPanel extends JPanel {
 
     public ButtonPanel(Timer timer) {
         this.timer = timer;
-        setBackground(Color.BLUE);
+        setBackground(Color.BLACK);
         JButton startButton = new JButton("Старт");
         JButton pauseButton = new JButton("Приостановить");
 
