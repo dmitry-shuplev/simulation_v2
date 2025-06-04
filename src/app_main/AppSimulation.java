@@ -15,6 +15,8 @@ import static java.lang.Thread.sleep;
 public class AppSimulation extends JFrame {
     private int stepCounter = 0;
     private GameMap gameMap;
+    private int width = Settings.VIEW_WIDTH;
+    private int haight = Settings.VIEW_HEIGHT;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AppSimulation::new);
@@ -22,10 +24,10 @@ public class AppSimulation extends JFrame {
 
     public AppSimulation() {
         this.gameMap = new GameMap();
-        setSize(1200, 600);
+        setSize(width, haight);
         setTitle("Проект Симуляция road_map Сергея Жукова версия 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        MapPanel mapPanel = new MapPanel();
+        MapPanel mapPanel = new MapPanel(gameMap);
         JPanel southPanel = new JPanel(new FlowLayout());
         JLabel infoLabel = new JLabel("Шаг : 0, Инициация.");
 

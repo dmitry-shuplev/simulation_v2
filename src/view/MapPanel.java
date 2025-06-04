@@ -6,8 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MapPanel extends JPanel {
-    public MapPanel() {
-        setBackground(Color.LIGHT_GRAY);
+  private MapComponents components;
+    public MapPanel(GameMap gm) {
+        components = new MapComponents(gm);
+        setLayout(new BorderLayout());
+        add(components, BorderLayout.CENTER);
     }
-
 }
