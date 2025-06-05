@@ -7,9 +7,9 @@ import java.awt.*;
 
 public class MapPanel extends JPanel {
   private MapComponents components;
-    public MapPanel(GameMap gm) {
-        components = new MapComponents(gm);
+    public MapPanel(JComponent map_view) {
         setLayout(new BorderLayout());
-        add(components, BorderLayout.CENTER);
+        add(map_view, BorderLayout.CENTER);
     }
+
 }

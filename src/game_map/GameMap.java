@@ -18,10 +18,17 @@ public class GameMap {
         game_map.put(entity.getCoordinate(), entity);
     }
 
+    public Map<Coordinate, Entity> getGame_map_copy() {
+        return new HashMap<Coordinate, Entity>(game_map);
+    }
 
+    public Entity getEntity(Coordinate c){
+        return getGame_map_copy().get(c);
+    }
 
     public boolean isCoordinateFree(Coordinate c) {
         return !game_map.containsKey(c);
     }
+
 
 }

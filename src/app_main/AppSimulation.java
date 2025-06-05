@@ -3,6 +3,7 @@ package app_main;
 import actions.GameActionInit;
 import game_map.GameMap;
 import view.ButtonPanel;
+import view.MapComponents;
 import view.MapPanel;
 
 import javax.swing.*;
@@ -15,8 +16,10 @@ import static java.lang.Thread.sleep;
 public class AppSimulation extends JFrame {
     private int stepCounter = 0;
     private GameMap gameMap;
+    private MapComponents mapComponents;
+
     private int width = Settings.VIEW_WIDTH;
-    private int haight = Settings.VIEW_HEIGHT;
+    private int height = Settings.VIEW_HEIGHT;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(AppSimulation::new);
@@ -24,10 +27,11 @@ public class AppSimulation extends JFrame {
 
     public AppSimulation() {
         this.gameMap = new GameMap();
-        setSize(width, haight);
+        setSize(width, height);
         setTitle("Проект Симуляция road_map Сергея Жукова версия 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        MapPanel mapPanel = new MapPanel(gameMap);
+        mapComponents = new MapComponents(gameMap);
+        MapPanel mapPanel = new MapPanel(mapComponents);
         JPanel southPanel = new JPanel(new FlowLayout());
         JLabel infoLabel = new JLabel("Шаг : 0, Инициация.");
 
@@ -53,10 +57,11 @@ public class AppSimulation extends JFrame {
     public void nextTurn(JLabel labelInfo) {
         stepCounter++;
         labelInfo.setText("Шаг : " + stepCounter);
+        mapComponents.repaint();
     }
 
     public void startSimulation() {
-         new GameActionInit(gameMap);
+        new GameActionInit(gameMap);
         System.out.println(gameMap.toString());
     }
 

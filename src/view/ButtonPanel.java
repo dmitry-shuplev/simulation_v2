@@ -13,7 +13,6 @@ public class ButtonPanel extends JPanel {
         setBackground(Color.BLACK);
         JButton startButton = new JButton("Старт");
         JButton pauseButton = new JButton("Приостановить");
-
         JButton finishButton = new JButton("Закончить");
 
         startButton.addActionListener(new ActionListener() {
