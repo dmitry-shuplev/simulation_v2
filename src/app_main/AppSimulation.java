@@ -1,6 +1,8 @@
 package app_main;
 
+import actions.ActionsWithEntity;
 import actions.GameActionInit;
+import actions.GameMapAction;
 import game_map.GameMap;
 import view.ButtonPanel;
 import view.MapComponents;
@@ -17,6 +19,8 @@ public class AppSimulation extends JFrame {
     private int stepCounter = 0;
     private GameMap gameMap;
     private MapComponents mapComponents;
+    //private ActionsWithEntity entityExecute;
+    private GameMapAction entityExecute;
 
     private int width = Settings.VIEW_WIDTH;
     private int height = Settings.VIEW_HEIGHT;
@@ -27,6 +31,7 @@ public class AppSimulation extends JFrame {
 
     public AppSimulation() {
         this.gameMap = new GameMap();
+        entityExecute = new GameMapAction(gameMap);
         setSize(width, height);
         setTitle("Проект Симуляция road_map Сергея Жукова версия 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +62,7 @@ public class AppSimulation extends JFrame {
     public void nextTurn(JLabel labelInfo) {
         stepCounter++;
         labelInfo.setText("Шаг : " + stepCounter);
+        entityExecute.stepAllEntites();
         mapComponents.repaint();
     }
 

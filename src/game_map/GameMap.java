@@ -22,7 +22,7 @@ public class GameMap {
         return new HashMap<Coordinate, Entity>(game_map);
     }
 
-    public Entity getEntity(Coordinate c){
+    public Entity getEntity(Coordinate c) {
         return getGame_map_copy().get(c);
     }
 
@@ -30,5 +30,11 @@ public class GameMap {
         return !game_map.containsKey(c);
     }
 
+    public boolean isCoordinateCorrect(Coordinate c){
+        return c.isCorrect()&isCoordinateFree(c);
 
+    }
+    public void remove(Coordinate coordinate) {
+        game_map.remove(coordinate);
+    }
 }

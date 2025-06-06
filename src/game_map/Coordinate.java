@@ -11,18 +11,22 @@ public class Coordinate {
         posX = x;
         posY = y;
     }
+    public Coordinate(Coordinate c){
+        posX = c.getPosX();
+        posY = c.getPosY();
+    }
 
 
     public int getPosX() {
         return posX;
     }
 
-    public void setPosX(int posX) {
-        this.posX = posX;
-    }
-
     public int getPosY() {
         return posY;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
     }
 
     public void setPosY(int posY) {
@@ -30,8 +34,8 @@ public class Coordinate {
     }
 
     public boolean isCorrect() {
-        return this.posX >= 0 && this.posX <= app_main.Settings.GAME_FIELD_X_MAX &&
-                this.posY >= 0 && this.posY <= app_main.Settings.GAME_FIELD_Y_MAX;
+        return this.posX >= 0 && this.posX < app_main.Settings.GAME_FIELD_X_MAX &&
+                this.posY >= 0 && this.posY < app_main.Settings.GAME_FIELD_Y_MAX;
     }
 
 

@@ -19,4 +19,5 @@ public abstract class Creature extends Entity {
     public void setHealth(int health) {
         this.health = health;
     }
+
 }

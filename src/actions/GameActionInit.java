@@ -21,7 +21,7 @@ public class GameActionInit {
         Map<String, Integer> startMap = new HashMap<>(Settings.START_MAP);
         for (Map.Entry<String, Integer> entry : startMap.entrySet()) {
             for (int i = 0; i < entry.getValue(); i++) {
-                actions.createEntyti(entry.getKey());
+                actions.createEntity(entry.getKey());
             }
         }
     }

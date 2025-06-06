@@ -12,7 +12,7 @@ public class ActionsWithEntity {
         this.gameMap = gm;
     }
 
-    public void createEntyti(String entityName) {
+    public void createEntity(String entityName) {
         Coordinate entityCoordinate = randomiser.getFreeCoordinate();
         try {
             Class<?> clazz = Class.forName("entities." + entityName);
@@ -24,7 +24,10 @@ public class ActionsWithEntity {
             e.printStackTrace();
         }
     }
+ public Coordinate finedTarget(Creature creature){
 
+        return new Coordinate(0,0);
+ }
 
 
 
