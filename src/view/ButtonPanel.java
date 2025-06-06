@@ -18,7 +18,6 @@ public class ButtonPanel extends JPanel {
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Старт");
                 timer.start();
             }
         });
@@ -27,7 +26,6 @@ public class ButtonPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 timer.stop();
-                System.out.println("Пауза");
             }
         });
 
