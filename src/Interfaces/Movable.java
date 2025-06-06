@@ -30,7 +30,6 @@ public interface Movable {
         }
 
     }
-
     Coordinate getCoordinate();
 
     void setCoordinate(Coordinate c);
