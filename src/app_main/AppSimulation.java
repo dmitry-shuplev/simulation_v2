@@ -1,6 +1,5 @@
 package app_main;
 
-import actions.ActionsWithEntity;
 import actions.GameActionInit;
 import actions.GameMapAction;
 import game_map.GameMap;

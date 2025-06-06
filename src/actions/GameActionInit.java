@@ -1,18 +1,20 @@
 package actions;
 
 import app_main.Settings;
+import entities.Entity;
+import game_map.Coordinate;
 import game_map.GameMap;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class GameActionInit {
-    private GameMap game_map;
-    private ActionsWithEntity actions;
+    private GameMap gameMap;
+    Randomiser randomiser;
 
     public GameActionInit(GameMap m) {
-        this.game_map = m;
-        this.actions = new ActionsWithEntity(game_map);
+        this.gameMap = m;
+        this.randomiser = new Randomiser(gameMap);
         this.fillGameMap();
 
     }
@@ -21,8 +23,21 @@ public class GameActionInit {
         Map<String, Integer> startMap = new HashMap<>(Settings.START_MAP);
         for (Map.Entry<String, Integer> entry : startMap.entrySet()) {
             for (int i = 0; i < entry.getValue(); i++) {
-                actions.createEntity(entry.getKey());
+                createEntity(entry.getKey());
             }
+        }
+    }
+
+    public void createEntity(String entityName) {
+        Coordinate entityCoordinate = randomiser.getFreeCoordinate();
+        try {
+            Class<?> clazz = Class.forName("entities." + entityName);
+            var constructor = clazz.getDeclaredConstructor(Coordinate.class);
+            Object entity = constructor.newInstance(entityCoordinate);
+            gameMap.setEntity((Entity) entity);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
