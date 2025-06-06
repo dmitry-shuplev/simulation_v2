@@ -7,5 +7,6 @@ public class Herbivore extends Creature{
     public Herbivore(Coordinate c){
        super(c);
        setHealth(Settings.HERBIVORE_HEALTH);
+       foodMarker = "Grass";
     }
 }
