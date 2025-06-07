@@ -30,6 +30,7 @@ public class CoordinateUtils {
     }
 
     public static Settings.Direction getDirFromCoordinate(Coordinate current, Coordinate destinatinon) {
+        if(current==null||destinatinon==null) return Settings.Direction.HOLD_POSITION;
         if (current.getPosX() == destinatinon.getPosX() && current.getPosY() < destinatinon.getPosY()) {
             return Settings.Direction.DOWN;
         } else if (current.getPosX() == destinatinon.getPosX() && current.getPosY() > destinatinon.getPosY()) {
@@ -38,7 +39,7 @@ public class CoordinateUtils {
             return Settings.Direction.LEFT;
         } else if (current.getPosX() < destinatinon.getPosX() && current.getPosY() == destinatinon.getPosY()) {
             return Settings.Direction.RIGHT;
-        } else return null;
+        } else return Settings.Direction.HOLD_POSITION;
     }
 public static List<Coordinate> getNaigborsCoordinates(Coordinate current){
         List<Coordinate> naighborsCoordinates = new LinkedList<>();

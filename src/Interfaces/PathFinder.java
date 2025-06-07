@@ -1,12 +1,12 @@
 package Interfaces;
 
+import actions.Randomiser;
 import app_main.Settings;
 import game_map.*;
 
 import java.util.*;
 
 public interface PathFinder {
-    String getFoodMarker();
 
     public default Coordinate findPreyCoordinate(GameMap gameMap) {
         List<Coordinate> wasChecked = new LinkedList<>();
@@ -28,7 +28,7 @@ public interface PathFinder {
             }
         }
         //stub
-        return new Coordinate(0, 0);
+        return new Randomiser(gameMap).getFreeCoordinate();
     }
 
     public default List<Coordinate> findPath(GameMap gameMap, Coordinate targerCoordinate) {
@@ -84,13 +84,12 @@ public interface PathFinder {
     public default Settings.Direction getNextStepDirection(GameMap gameMap) {
         Coordinate targerCoordinate = findPreyCoordinate(gameMap);
         List<Coordinate> path = findPath(gameMap, targerCoordinate);
-        if path.isEmpty(){
-            return null;
-        }
+        targerCoordinate = path.get(0);
         return CoordinateUtils.getDirFromCoordinate(getCoordinate(), targerCoordinate);
     }
 
     Coordinate getCoordinate();
+    String getFoodMarker();
 
     void setCoordinate(Coordinate coordinate);
 }

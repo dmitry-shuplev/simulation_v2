@@ -26,7 +26,8 @@ public class Settings {
         UP,
         DOWN,
         RIGHT,
-        LEFT
+        LEFT,
+        HOLD_POSITION
     }
 
 
