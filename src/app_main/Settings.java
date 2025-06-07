@@ -11,11 +11,13 @@ public class Settings {
     public static final int GRASS_QUANTITY = 1;
     public static final int HERBIVORE_HEALTH = 1;
     public static final int PREDATOR_HEALTH = 1;
+    public static final int MOVE_COST = 1;
+
 
     public final static Map<String, Integer> START_MAP = Map.of(
-            "Herbivore", 5,
-            "Predator", 2,
-            "Grass", 6,
+            "Herbivore", 0,
+            "Predator", 0,
+            "Grass", 0,
             "Tree", 20,
             "Rock", 50
     );

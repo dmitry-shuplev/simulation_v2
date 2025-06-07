@@ -13,7 +13,6 @@ public class GameMap {
         game_map = new HashMap<>();
     }
 
-
     public void setEntity(Entity entity) {
         game_map.put(entity.getCoordinate(), entity);
     }
@@ -30,10 +29,6 @@ public class GameMap {
         return !game_map.containsKey(c);
     }
 
-    public boolean isCoordinateCorrect(Coordinate c){
-        return c.isCorrect()&isCoordinateFree(c);
-
-    }
     public void remove(Coordinate coordinate) {
         game_map.remove(coordinate);
     }

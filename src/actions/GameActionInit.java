@@ -2,6 +2,8 @@ package actions;
 
 import app_main.Settings;
 import entities.Entity;
+import entities.Herbivore;
+import entities.Predator;
 import game_map.Coordinate;
 import game_map.GameMap;
 
@@ -16,7 +18,10 @@ public class GameActionInit {
         this.gameMap = m;
         this.randomiser = new Randomiser(gameMap);
         this.fillGameMap();
-
+     //stub
+        //gameMap.setEntity(new Herbivore(new Coordinate(0, 0)));
+        gameMap.setEntity(new Herbivore(new Coordinate(12, 10)));
+        gameMap.setEntity(new Predator(new Coordinate(0, 5)));
     }
 
     private void fillGameMap() {

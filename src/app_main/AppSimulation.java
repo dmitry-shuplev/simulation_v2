@@ -48,7 +48,6 @@ public class AppSimulation extends JFrame {
         ButtonPanel buttonPanel = new ButtonPanel(timer);
         southPanel.add(infoLabel);
         southPanel.add(buttonPanel);
-
         setLayout(new BorderLayout());
         add(mapPanel, BorderLayout.CENTER);
         add(southPanel, BorderLayout.SOUTH);

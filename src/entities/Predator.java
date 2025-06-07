@@ -1,9 +1,10 @@
 package entities;
 
 import Interfaces.Movable;
+import Interfaces.PathFinder;
 import game_map.Coordinate;
 
-public class Predator extends Creature implements Movable {
+public class Predator extends Creature{
 
     public Predator(Coordinate c){
         super(c);
