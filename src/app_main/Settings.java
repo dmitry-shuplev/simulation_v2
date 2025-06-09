@@ -8,9 +8,11 @@ public class Settings {
 
     public static final int GAME_FIELD_X_MAX = 30;
     public static final int GAME_FIELD_Y_MAX = 12;
-    public static final int GRASS_QUANTITY = 1;
-    public static final int HERBIVORE_HEALTH = 1;
-    public static final int PREDATOR_HEALTH = 1;
+    public static final int GRASS_QUANTITY = 100;
+    public static final int HERBIVORE_HEALTH = 100;
+    public static final int HERBIVORE_HEALTH_MAX = 200;
+    public static final int PREDATOR_HEALTH = 100;
+    public static final int PREDATOR_HEALTH_MAX = 500;
     public static final int MOVE_COST = 1;
 
 
