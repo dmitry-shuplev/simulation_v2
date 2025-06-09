@@ -1,6 +1,5 @@
 package entities;
 
-import Interfaces.*;
 import app_main.Settings;
 import game_map.Coordinate;
 

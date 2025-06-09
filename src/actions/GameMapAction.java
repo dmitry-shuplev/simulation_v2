@@ -1,13 +1,10 @@
 package actions;
 
-import Interfaces.Movable;
 import app_main.Settings;
 import entities.*;
 import game_map.Coordinate;
-import game_map.CoordinateUtils;
 import game_map.GameMap;
 
-import java.awt.image.DirectColorModel;
 import java.util.Map;
 
 import static app_main.Settings.Direction.*;
@@ -24,11 +21,18 @@ public class GameMapAction {
             Entity entity = entry.getValue();
             if (entity instanceof Creature) {
                 Creature creature = (Creature) entity;
-                creature.eat(gameMap);
-                creature.move(creature.getNextStepDirection(gameMap), gameMap);
-              //  gameMap.setEntity(new Grass(new Randomiser(gameMap).getFreeCoordinate()));
+                creature.clearActivityCount();
+                boolean wasEaten = creature.eat(gameMap);
+                //log
+                if (!wasEaten) {
+                    creature.move(creature.getNextStepDirection(gameMap), gameMap);
+                } else {
+                    System.out.println("Существо:" + creature.getClass().getSimpleName() + " уже когото съело,");
+                }
+                System.out.println("Существо" + creature.getClass().getSimpleName() + "Здоровье:"+creature.getHealth());
             }
         }
+        gameMap.setEntity(new Grass(new Randomiser(gameMap).getFreeCoordinate()));
 
     }
 

@@ -11,11 +11,9 @@ public abstract class Alive extends Entity {
     protected void setHealth(int health) { // Реализация метода setHealth из интерфейса Alive
         this.health = health;
     }
-
     public int getHealth() {
         return health;
     }
-
     public void takeDamage() {
         health--;
     }

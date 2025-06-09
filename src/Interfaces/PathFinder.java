@@ -2,7 +2,6 @@ package Interfaces;
 
 import actions.Randomiser;
 import app_main.Settings;
-import entities.Path;
 import game_map.*;
 
 import java.util.*;
