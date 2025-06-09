@@ -2,6 +2,7 @@ package Interfaces;
 
 import actions.Randomiser;
 import app_main.Settings;
+import entities.Path;
 import game_map.*;
 
 import java.util.*;
@@ -19,8 +20,6 @@ public interface PathFinder {
                 if (!wasChecked.contains(nodeCoordinate) && !queue.contains(nodeCoordinate)) {
                     if (!gameMap.isCoordinateFree(nodeCoordinate) &&
                             gameMap.getEntity(nodeCoordinate).getClass().getSimpleName().equals(getFoodMarker())) {
-                        //log
-                        System.out.println(nodeCoordinate);
                         return nodeCoordinate;
                     }
                     queue.add(nodeCoordinate);
@@ -82,13 +81,20 @@ public interface PathFinder {
     }
 
     public default Settings.Direction getNextStepDirection(GameMap gameMap) {
+
         Coordinate targerCoordinate = findPreyCoordinate(gameMap);
         List<Coordinate> path = findPath(gameMap, targerCoordinate);
-        targerCoordinate = path.get(0);
+        gameMap.path.clear();
+        if (!path.isEmpty()) {
+            targerCoordinate = path.remove(0);
+        }
+
+
         return CoordinateUtils.getDirFromCoordinate(getCoordinate(), targerCoordinate);
     }
 
     Coordinate getCoordinate();
+
     String getFoodMarker();
 
     void setCoordinate(Coordinate coordinate);

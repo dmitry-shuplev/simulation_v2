@@ -4,13 +4,16 @@ import app_main.Settings;
 import entities.Entity;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 public class GameMap {
     Map<Coordinate, Entity> game_map;
+    public LinkedList<Coordinate> path;
 
     public GameMap() {
         game_map = new HashMap<>();
+        path = new LinkedList<>();
     }
 
     public void setEntity(Entity entity) {

@@ -15,9 +15,9 @@ public class Settings {
 
 
     public final static Map<String, Integer> START_MAP = Map.of(
-            "Herbivore", 0,
-            "Predator", 0,
-            "Grass", 0,
+            "Herbivore", 5,
+            "Predator", 1,
+            "Grass", 70,
             "Tree", 20,
             "Rock", 50
     );

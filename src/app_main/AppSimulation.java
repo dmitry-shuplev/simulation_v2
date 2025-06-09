@@ -2,6 +2,9 @@ package app_main;
 
 import actions.GameActionInit;
 import actions.GameMapAction;
+import entities.Entity;
+import entities.Path;
+import game_map.Coordinate;
 import game_map.GameMap;
 import view.ButtonPanel;
 import view.MapComponents;
@@ -11,6 +14,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.util.Map;
 
 import static java.lang.Thread.sleep;
 
@@ -45,6 +50,7 @@ public class AppSimulation extends JFrame {
                 nextTurn(infoLabel);
             }
         });
+
         ButtonPanel buttonPanel = new ButtonPanel(timer);
         southPanel.add(infoLabel);
         southPanel.add(buttonPanel);
@@ -56,12 +62,12 @@ public class AppSimulation extends JFrame {
         this.startSimulation();
     }
 
-
     public void nextTurn(JLabel labelInfo) {
         stepCounter++;
         labelInfo.setText("Шаг : " + stepCounter);
         entityExecute.stepAllEntites();
         mapComponents.repaint();
+
     }
 
     public void startSimulation() {

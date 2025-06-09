@@ -7,6 +7,7 @@ import game_map.GameMap;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
 
 public class MapComponents extends JComponent {
     private GameMap gameMap;
@@ -95,6 +96,7 @@ super.paint(g);
         String swithcer;
         Entity answer = gameMap.getEntity(coordinate);
         swithcer = (answer!= null) ? answer.getClass().getSimpleName() : "Emptiness";
+        if(gameMap.path.contains(coordinate)){swithcer = "Path";}
         return swithcer;
     }
 }

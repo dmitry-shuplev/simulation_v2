@@ -7,7 +7,7 @@ import game_map.Coordinate;
 public class Herbivore extends Creature {
     public Herbivore(Coordinate c){
        super(c);
-       setHealth(Settings.HERBIVORE_HEALTH);
        foodMarker = "Grass";
+       setHealth(Settings.HERBIVORE_HEALTH);
     }
 }

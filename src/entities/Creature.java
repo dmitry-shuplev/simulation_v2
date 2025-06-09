@@ -1,10 +1,10 @@
 package entities;
 
-import Interfaces.Movable;
-import Interfaces.PathFinder;
+
+import Interfaces.*;
 import game_map.Coordinate;
 
-public abstract class Creature extends Entity implements Movable, PathFinder {
+public abstract class Creature extends Alive implements Movable, PathFinder, Eating {
     private int health;
     protected String foodMarker;
 
@@ -12,14 +12,8 @@ public abstract class Creature extends Entity implements Movable, PathFinder {
         super(c);
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public String getFoodMarker(){return foodMarker;}
-
-    public void setHealth(int health) {
-        this.health = health;
+    public String getFoodMarker() {
+        return foodMarker;
     }
 
 }
