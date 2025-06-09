@@ -12,11 +12,11 @@ import java.util.Map;
 
 public interface Eating {
     default boolean eat(GameMap gameMap) {
+        if (this.getHealth()<=0){gameMap.remove(this.getCoordinate());}
         List<Coordinate> neighbors = CoordinateUtils.getNaigborsCoordinates(getCoordinate());
         Creature creature = (Creature) this;
         for (Coordinate neigborCoordinate : neighbors) {
             Entity entity = gameMap.getEntity(neigborCoordinate);
-
             if (entity == null || !(entity instanceof Alive)) {
                 continue;
             }
@@ -42,5 +42,4 @@ public interface Eating {
 
     String getFoodMarker();
 
-    void stepDone();
 }

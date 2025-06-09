@@ -10,6 +10,7 @@ public interface Movable {
 
     public default void move(Direction dir, GameMap gameMap) {
         if (dir == Direction.HOLD_POSITION) return;
+        if (this.getHealth()<=0){gameMap.remove(this.getCoordinate());}
         Coordinate newCoordinate = CoordinateUtils.getCoorFromDirection(this.getCoordinate(), dir);
         if (newCoordinate.isCorrect()&gameMap.isCoordinateFree(newCoordinate)) {
             gameMap.remove(this.getCoordinate());
@@ -18,6 +19,7 @@ public interface Movable {
         }
 
     }
+    int getHealth();
     Coordinate getCoordinate();
     void setCoordinate(Coordinate c);
 }

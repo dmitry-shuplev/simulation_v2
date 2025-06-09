@@ -8,5 +8,6 @@ public class Herbivore extends Creature {
        super(c);
        foodMarker = "Grass";
        setHealth(Settings.HERBIVORE_HEALTH);
+       maxHealth = Settings.HERBIVORE_HEALTH_MAX;
     }
 }

@@ -3,22 +3,28 @@ package entities;
 import game_map.Coordinate;
 
 public abstract class Alive extends Entity {
-    private  int health;
+    protected int health;
+    protected int maxHealth;
 
-    public Alive(Coordinate c){
+    public Alive(Coordinate c) {
         super(c);
     }
+
     protected void setHealth(int health) { // Реализация метода setHealth из интерфейса Alive
         this.health = health;
     }
+
     public int getHealth() {
         return health;
     }
+
     public void takeDamage() {
-        health--;
+        health -= 100;
     }
 
     public void increaceLife() {
-        health++;
+        if (health <= maxHealth) {
+            health += 30;
+        }
     }
 }

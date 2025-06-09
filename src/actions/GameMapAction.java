@@ -21,7 +21,6 @@ public class GameMapAction {
             Entity entity = entry.getValue();
             if (entity instanceof Creature) {
                 Creature creature = (Creature) entity;
-                creature.clearActivityCount();
                 boolean wasEaten = creature.eat(gameMap);
                 //log
                 if (!wasEaten) {
@@ -35,13 +34,5 @@ public class GameMapAction {
         gameMap.setEntity(new Grass(new Randomiser(gameMap).getFreeCoordinate()));
 
     }
-
-    private Settings.Direction getNextStepDirection(Creature hanter, Entity prey) {
-
-
-        //log
-        return UP;
-    }
-
 
 }
