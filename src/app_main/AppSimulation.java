@@ -39,12 +39,12 @@ public class AppSimulation extends JFrame {
         setSize(width, height);
         setTitle("Проект Симуляция road_map Сергея Жукова версия 2");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mapComponents = new MapComponents(gameMap);
+        mapComponents = new MapComponents(gameMap)                                                                                                                                                                                                                                                                                                          ;
         MapPanel mapPanel = new MapPanel(mapComponents);
         JPanel southPanel = new JPanel(new FlowLayout());
         JLabel infoLabel = new JLabel("Шаг : 0, Инициация.");
 
-        Timer timer = new Timer(1000, new ActionListener() {
+        Timer timer = new Timer(350, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 nextTurn(infoLabel);

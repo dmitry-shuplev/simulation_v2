@@ -26,6 +26,7 @@ public interface Eating {
                 creature.increaceLife();
                 if (neighbor.getHealth() <= 0) {
                     gameMap.remove(neigborCoordinate);
+                    neighbor.setCoordinate(new Coordinate(0, 0));
                     gameMap.remove(getCoordinate());
                     creature.setCoordinate(neigborCoordinate);
                     gameMap.setEntity(creature);
