@@ -29,4 +29,8 @@ public class Randomiser {
         }
         return coordinate;
     }
+
+    public boolean isHerbivoreLose(){
+        return this.random.nextInt(100)>70;
+    }
 }

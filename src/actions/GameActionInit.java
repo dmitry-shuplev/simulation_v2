@@ -19,9 +19,7 @@ public class GameActionInit {
         this.gameMap = m;
         this.randomiser = new Randomiser(gameMap);
         this.fillGameMap();
-     //stub
-        gameMap.setEntity(new Herbivore(new Coordinate(18, 7)));
-        gameMap.setEntity(new Predator(new Coordinate(0, 5)));
+
     }
 
     private void fillGameMap() {
