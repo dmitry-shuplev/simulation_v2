@@ -1,13 +1,10 @@
 package actions;
 
-import app_main.Settings;
 import entities.*;
 import game_map.Coordinate;
 import game_map.GameMap;
-
 import java.util.Map;
 
-import static app_main.Settings.Direction.*;
 
 public class GameMapAction {
     private GameMap gameMap;

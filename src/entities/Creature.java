@@ -16,7 +16,6 @@ public abstract class Creature extends Alive implements Movable, PathFinder, Eat
         return foodMarker;
     }
 
-
     public void deleteByHealthStatus(GameMap gameMap){
         if (health<=0) {gameMap.remove(this.getCoordinate());}
     }

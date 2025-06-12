@@ -1,7 +1,6 @@
 package game_map;
 
 import app_main.Settings;
-
 import java.util.LinkedList;
 import java.util.List;
 

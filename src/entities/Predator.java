@@ -4,7 +4,6 @@ import app_main.Settings;
 import game_map.Coordinate;
 
 public class Predator extends Creature{
-
     public Predator(Coordinate c){
         super(c);
         foodMarker = "Herbivore";

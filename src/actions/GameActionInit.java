@@ -2,9 +2,6 @@ package actions;
 
 import app_main.Settings;
 import entities.Entity;
-import entities.Grass;
-import entities.Herbivore;
-import entities.Predator;
 import game_map.Coordinate;
 import game_map.GameMap;
 

@@ -1,6 +1,5 @@
 package game_map;
 
-import app_main.Settings;
 import entities.Entity;
 
 import java.util.HashMap;

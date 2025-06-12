@@ -7,7 +7,6 @@ import game_map.GameMap;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.LinkedList;
 
 public class MapComponents extends JComponent {
     private GameMap gameMap;
@@ -24,7 +23,7 @@ public class MapComponents extends JComponent {
 
     public MapComponents(GameMap gm) {
         this.gameMap = gm;
-    loadImages();
+        loadImages();
     }
 
     private void loadImages() {
@@ -37,7 +36,7 @@ public class MapComponents extends JComponent {
 
     @Override
     public void paint(Graphics g) {
-super.paint(g);
+        super.paint(g);
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, width, height);
 
@@ -47,8 +46,7 @@ super.paint(g);
         for (int y = 0; y < mapHeight; y++) {
             for (int x = 0; x < mapWidth; x++) {
 
-
-                switch (getSwitcher(x,y)) {
+                switch (getSwitcher(x, y)) {
                     case "Predator":
                         g.setColor(Color.RED);
                         g.fillRect(x * cellSize, y * cellSize, (int) (cellSize / 1.2), (int) (cellSize / 1.2));
@@ -61,6 +59,7 @@ super.paint(g);
                         break;
                     case "Grass":
                         g.setColor(new Color(144, 238, 144));
+
                         g.fillRect(x * cellSize, y * cellSize, (int) (cellSize / 1.2), (int) (cellSize / 1.2));
                         g.drawImage(grassImage, x * cellSize, y * cellSize, (int) (cellSize / 1.2), (int) (cellSize / 1.2), this);
                         break;
@@ -91,12 +90,14 @@ super.paint(g);
 
     }
 
-    private String getSwitcher(int x, int y){
-        Coordinate coordinate = new Coordinate(x,y);
+    private String getSwitcher(int x, int y) {
+        Coordinate coordinate = new Coordinate(x, y);
         String swithcer;
         Entity answer = gameMap.getEntity(coordinate);
-        swithcer = (answer!= null) ? answer.getClass().getSimpleName() : "Emptiness";
-        if(gameMap.path.contains(coordinate)){swithcer = "Path";}
+        swithcer = (answer != null) ? answer.getClass().getSimpleName() : "Emptiness";
+        if (gameMap.path.contains(coordinate)) {
+            swithcer = "Path";
+        }
         return swithcer;
     }
 }
