@@ -22,7 +22,7 @@ public interface Eating {
             }
             Alive neighbor = (Alive) entity;
             if (neighbor.getClass().getSimpleName().equals(getFoodMarker())) {
-                neighbor.takeDamage();
+                neighbor.takeDamage(100);
                 creature.increaceLife();
                 if (neighbor.getHealth() <= 0) {
                     gameMap.remove(neigborCoordinate);

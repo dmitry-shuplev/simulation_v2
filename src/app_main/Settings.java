@@ -5,7 +5,7 @@ import java.util.Map;
 public class Settings {
     public static final int VIEW_WIDTH = 1200;
     public static final int VIEW_HEIGHT = 600;
-
+    public static final int STARVE_DAMAGE = 1;
     public static final int GAME_FIELD_X_MAX = 45;
     public static final int GAME_FIELD_Y_MAX = 25;
     public static final int GRASS_QUANTITY = 100;
