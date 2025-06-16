@@ -33,4 +33,8 @@ public class Randomiser {
     public boolean isHerbivoreLose(){
         return this.random.nextInt(100)>70;
     }
+
+    public boolean isFail() {
+        return  random.nextInt(100) >= 70;
+    }
 }

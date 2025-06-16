@@ -18,8 +18,12 @@ public abstract class Alive extends Entity {
         return health;
     }
 
-    public void takeDamage() {
-        health -= 100;
+    public boolean isAlive() {
+        return health > 0;
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
     }
 
     public void increaceLife() {

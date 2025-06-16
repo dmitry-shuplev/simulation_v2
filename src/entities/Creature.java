@@ -5,7 +5,7 @@ import Interfaces.*;
 import game_map.Coordinate;
 import game_map.GameMap;
 
-public abstract class Creature extends Alive implements Movable, PathFinder, Eating {
+public abstract class Creature extends Alive implements Movable, PathFinder, Eating, Starvable {
     protected String foodMarker;
 
     public Creature(Coordinate c) {
